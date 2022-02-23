@@ -1,0 +1,7 @@
+C:\Users\Space Face\source\repos\Game Database\Game Database\bin\Debug\Game Database.exe.config
+C:\Users\Space Face\source\repos\Game Database\Game Database\bin\Debug\Game Database.exe
+C:\Users\Space Face\source\repos\Game Database\Game Database\bin\Debug\Game Database.pdb
+C:\Users\Space Face\source\repos\Game Database\Game Database\obj\Debug\Game Database.csprojAssemblyReference.cache
+C:\Users\Space Face\source\repos\Game Database\Game Database\obj\Debug\Game Database.csproj.CoreCompileInputs.cache
+C:\Users\Space Face\source\repos\Game Database\Game Database\obj\Debug\Game Database.exe
+C:\Users\Space Face\source\repos\Game Database\Game Database\obj\Debug\Game Database.pdb
