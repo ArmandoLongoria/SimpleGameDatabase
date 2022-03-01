@@ -179,7 +179,7 @@ namespace Game_Database
         public static void RemoveFromInventory(string deleteTitle)
         {
             int j = 0;
-            Game[] tempGames = new Game[--inventorySize];
+            Game[] tempGames = new Game[games.Length];
             for(int i = 0; i < games.Length; i++)
             {
                 if(deleteTitle == games[i].myTitle)
@@ -188,6 +188,7 @@ namespace Game_Database
                 }
                 tempGames[j++] = games[i];
             }
+            inventorySize--;
             games = tempGames;
         }
 
