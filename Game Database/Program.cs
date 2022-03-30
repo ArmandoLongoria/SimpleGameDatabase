@@ -93,22 +93,22 @@ namespace Game_Database
         {
             Console.WriteLine("Which game would you like to buy?");
             gameToBuy = Console.ReadLine();
-            foreach(Game g in games)
+            for(int i = 0; i < inventorySize; i++)
             {
-                if(g.myTitle.Equals(gameToBuy, StringComparison.OrdinalIgnoreCase))
+                if(games[i].myTitle.Equals(gameToBuy, StringComparison.OrdinalIgnoreCase))
                 {
                     Console.WriteLine("Game found.\n");
                     Console.WriteLine("How many copies would you like to purchase?");
                     purchaseQuantityString = Console.ReadLine();
                     if(int.TryParse(purchaseQuantityString, out purchaseQuantity))
                     {
-                        if(g.myQuantity >= purchaseQuantity)
+                        if(games[i].myQuantity >= purchaseQuantity)
                         {
-                            g.myQuantity = g.myQuantity - purchaseQuantity;
-                            g.UpdateInfo();
-                            if(g.myQuantity == 0)
+                            games[i].myQuantity = games[i].myQuantity - purchaseQuantity;
+                            games[i].UpdateInfo();
+                            if(games[i].myQuantity == 0)
                             {
-                                RemoveFromInventory(g.myTitle);
+                                RemoveFromInventory(games[i].myTitle);
                             }
                             Console.WriteLine("Thank you for your purchase(s)!");
                             MainMenu();
@@ -135,9 +135,9 @@ namespace Game_Database
         public static void DisplayInventory()
         {
             Console.WriteLine("==================================================== INVEMTORY =========================================================");
-            foreach (Game g in games)
+            for (int i = 0; i < inventorySize; i++)
             {
-                Console.WriteLine(g.toString());
+                Console.WriteLine(games[i].toString());
             }
             MainMenu();
         }
@@ -159,14 +159,14 @@ namespace Game_Database
         {
             Console.WriteLine("Which game would you like to search?");
             gameSelection = Console.ReadLine();
-            foreach(Game g in games)
+            for(int i =0; i < inventorySize; i++)
             {
-                if (g.myTitle.Equals(gameSelection, StringComparison.OrdinalIgnoreCase))
+                if (games[i].myTitle.Equals(gameSelection, StringComparison.OrdinalIgnoreCase))
                 {
                     Console.WriteLine("========================================================================================================================");
                     Console.WriteLine("RESULTS");
                     Console.WriteLine("========================================================================================================================");
-                    Console.WriteLine(g.toString()); 
+                    Console.WriteLine(games[i].toString()); 
                     MainMenu();
                     return;
                 }
@@ -180,7 +180,7 @@ namespace Game_Database
         {
             int j = 0;
             Game[] tempGames = new Game[games.Length];
-            for(int i = 0; i < games.Length; i++)
+            for(int i = 0; i < inventorySize; i++)
             {
                 if(deleteTitle == games[i].myTitle)
                 {
